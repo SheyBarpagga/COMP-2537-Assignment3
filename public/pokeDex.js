@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function getPoke() {
-    for (var x = 1; x < 9; x++) {
+    for (var x = 1; x < 10; x++) {
         var random = Math.floor(Math.random() * 900);
         fetch(`https://pokeapi.co/api/v2/pokemon/${random}`)
 
@@ -28,7 +28,7 @@ function getPokepokemon(pokemon) {
         pokemonIMG.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`;
 
         let imgBox = document.createElement("div");
-        imgBox.style.width = "200px";
+        // imgBox.style.width = "200px";
 
         pokeCont.classList.add("poke-container");
         pokemonIMG.classList.add("pokemon-image");

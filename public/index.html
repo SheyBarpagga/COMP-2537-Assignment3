@@ -53,6 +53,7 @@
             footer {
                 bottom:0;
             }
+            
 
             header a {
                 text-decoration: none;
@@ -100,10 +101,9 @@
                 flex-direction: column;
                 justify-content: center;
                 object-fit: scale-down;
-                outline: lightgray;
-                outline-style: double;
                 outline-width: 3px;
-                background-color: white;
+                border-radius: 15px;
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
             }
 
             .imgBox {
@@ -120,6 +120,11 @@
                 object-fit: scale-down;
 
             }
+            #logo {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
 
 
         </style>
@@ -127,7 +132,7 @@
 
     <body>
         <header>
-            <a href="index.html"><h1>PokeDex</h1></a>
+            <a href="index.html"><img src="/pokedexlogo.png" alt="logo" id="logo"></a>
             <hr>
             <nav>
                 <ul><a href="search.html">Search</a></ul>

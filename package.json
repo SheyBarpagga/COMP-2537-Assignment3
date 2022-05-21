@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/SheyBarpagga/COMP-2537-Assignment3#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "mongoose": "^6.3.4",
     "node": "^17.7.2"
   }
 }
