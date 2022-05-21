@@ -21,7 +21,7 @@ function getData(pokemon) {
     let pokeCont = document.createElement("div");
     let pokemonIMG = document.createElement("img");
     let typeList = document.createElement("ul");
-    pokemonIMG.srcset = `https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`;
+    pokemonIMG.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`;
 
     let imgBox = document.createElement("div");
     imgBox.style.width = "50vw";
