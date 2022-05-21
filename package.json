@@ -1,0 +1,22 @@
+{
+  "name": "comp-2537-assignment3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SheyBarpagga/COMP-2537-Assignment3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SheyBarpagga/COMP-2537-Assignment3/issues"
+  },
+  "homepage": "https://github.com/SheyBarpagga/COMP-2537-Assignment3#readme",
+  "dependencies": {
+    "node": "^17.7.2"
+  }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="English">
+    <head>
+
+        <title>COMP 2537 Assignment 1 - PokeDex</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script src="search.js"></script>
+
+        <style>
+            body {
+                margin: 0px;
+                font-family: fantasy;
+                font-weight: lighter;
+                background-image: url("/pikachu.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                min-height: 100vh;
+            }
+            nav {
+                margin: 10px;
+            }
+            nav ul {
+                list-style-type: none;
+                padding: 0%;
+                overflow: show;
+                text-align: center;
+            }
+            nav a {
+                background-color: rgba(255, 255, 255, 0.4);
+                padding: 10px;
+                border-radius: 4px;
+            }
+            h1 {
+                text-align: center;
+                font-weight: 100;
+                margin: 10px;
+
+            }
+
+            h3 {
+                font-weight: lighter;
+            }
+
+            hr {
+                border-top: 2px dotted white;
+            }
+
+            footer {
+                bottom:0;
+            }
+
+            header a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            div a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            #main-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                
+            }
+            #colOne {
+                display: flex;
+                flex-direction: column;
+                align-content: stretch;
+                margin: 10px;
+                gap: 10px;
+            }
+
+            #colTwo {
+                display: flex;
+                flex-direction: column;
+                align-content: stretch;
+                margin: 10px;
+                gap: 10px;
+            }
+
+            #colThree {
+                display: flex;
+                flex-direction: column;
+                align-content: stretch;
+                margin: 10px;
+                gap: 10px;
+
+            }
+
+            .poke-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                object-fit: scale-down;
+                outline: lightgray;
+                outline-style: double;
+                outline-width: 3px;
+                background-color: white;
+            }
+
+            .imgBox {
+                display: flex;
+                justify-content: center;
+                width: 100px;
+                height: 100px;
+            }
+
+            .pokemon-image {
+                object-fit: scale-down;
+
+            }
+
+            .form-container {
+                max-width: 50vw;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .sbutton a:link, a:visited {
+                background-color: black;
+                color: white;
+                padding: 20%;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            a.sbutton a:hover, a:active {
+                background-color: rgba(0, 0, 0, 0.354);
+            }
+
+            input {
+                width: 70%;
+                padding: 12px 20px;
+                margin: 5%;
+                box-sizing: border-box;
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+        <header>
+            <a href="index.html"><h1>PokeDex</h1></a>
+            <hr>
+        </header>
+            <div id="form-container">
+                <div id="name-container">
+                    <label for="name">Pokemon Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div id="weight-container">
+                    <label for="weight">Pokemon Weight</label>
+                    <input type="number" id="weight" name="weight">
+                </div>
+                <div id="height-container">
+                    <label for="height">Pokemon Height</label>
+                    <input type="number" id="height" name="height">
+                </div>
+            </div>
+
+        <div id="main-container">
+
+            <div id="colOne"></div>
+            <div id="colTwo"></div>
+            <div id="colThree"></div>
+
+
+        </div>
+        <hr>
+        <footer>
+            <p>© Shey Barpagga 2022</p>
+            <p>All info is used from the https://pokeapi.co/ website</p>
+        </footer>
+    </body>
+
+</html>
