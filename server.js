@@ -66,6 +66,8 @@ app.get('/times/getAllEvents', function(req, res) {
   });
 })
 
+app.get('/times/')
+
 app.put('/times/insert', function(req, res) {
   timeLineModel.create({
     'text': req.body.text,
@@ -78,8 +80,6 @@ app.put('/times/insert', function(req, res) {
       console.log("Data "+ JSON.stringify(data) );
     }
     res.send(JSON.stringify(data));
-
-
 });
 })
 
