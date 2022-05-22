@@ -85,19 +85,19 @@ app.put('/times/insert', function(req, res) {
 
 
 
-app.get('https://intense-woodland-48789.herokuapp.com/', function(req, res) {
+app.get('https://pokedex-assignment3.herokuapp.com/', function(req, res) {
     res.send('/public/index.html');
 });
 
-app.get('https://intense-woodland-48789.herokuapp.com/index.html', function(req, res) {
+app.get('https://pokedex-assignment3.herokuapp.com/index.html', function(req, res) {
     res.send('/public/index.html');
 });
 
-app.get('https://intense-woodland-48789.herokuapp.com/profile.html', function(req, res) {
+app.get('https://pokedex-assignment3.herokuapp.com/profile.html', function(req, res) {
     res.send('/public/profile.html');
 });
 
-app.get('https://intense-woodland-48789.herokuapp.com/search.html', function(req, res) {
+app.get('https://pokedex-assignment3.herokuapp.com/search.html', function(req, res) {
     res.send('/public/search.html');
 });
 
