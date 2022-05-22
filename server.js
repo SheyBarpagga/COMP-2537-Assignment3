@@ -31,27 +31,14 @@ const TimesSchema = new mongoose.Schema({
 });
 
 const UserSchema = new mongoose.Schema({
-    name: String,
-    currentCart: Array,
+    email: String,
+    password: String,
     cartHistory: Array
 })
 
 const userModel = mongoose.model("users", UserSchema);
 
 const timeLineModel = mongoose.model("times", TimesSchema);
-
-
-app.get('/pokemon/getPoke', function(req, res) {
-
-  pokeModel.find({}, function(err, data){
-      if (err){
-        console.log("Error " + err);
-      }else{
-        console.log("Data "+ JSON.stringify(data) );
-      }
-      res.send(JSON.stringify(data));
-  });
-})
 
 
 app.get('/times/getAllEvents', function(req, res) {
@@ -66,7 +53,29 @@ app.get('/times/getAllEvents', function(req, res) {
   });
 })
 
-app.get('/times/')
+app.get("/user", function(req, res) {
+  userModel.find({}, function(err, data){
+    if (err){
+      console.log("Error " + err);
+    }else{
+      console.log("Data "+ JSON.stringify(data) );
+    }
+    res.send(JSON.stringify(data));
+});
+})
+
+app.post('/user/register', function(req, res) {
+  userModel.create({
+    'email': req.body.email,
+    'password': req.body.password
+  }, function(err, data) {
+    if (err){
+      console.log("Error " + err);
+    } else {
+      console.log("Data "+ JSON.stringify(data) );
+    }
+    res.send(JSON.stringify(data))})
+})
 
 app.put('/times/insert', function(req, res) {
   timeLineModel.create({

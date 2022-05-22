@@ -13,7 +13,6 @@ function getPoke() {
         .then(response => response.json())
 
         .then(function(pokepokemon) {
-            console.log(pokepokemon[0]);
             getPokepokemon(pokepokemon);
         })
     }
@@ -36,20 +35,31 @@ function getPokepokemon(pokemon) {
         imgBox.appendChild(pokemonIMG);
         imgBox.classList.add("imgBox");
 
-
         let name = document.createElement("h3");
-        name.innerText = pokemon.name;
+
+        if(pokemon.id < 300) {
+            name.innerText = `${pokemon.name} $30`;
+        } else if(pokemon.id < 600) {
+            name.innerText = `${pokemon.name} $20`;
+        } else {
+            name.innerText = `${pokemon.name} $10`;
+        }
+
         name.style.alignSelf = "center";
-        
+
+
         let id = document.createElement("p");
         id.innerText = "#" + pokemon.id;
         id.style.alignSelf = "center";
 
+        let add = document.createElement("a");
+        add.innerText = "Add to cart";
+        add.style.cssText ="outline-width: 3px;border-radius: 15px;background-color: rgba(229, 229, 224, 1);box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);align-self: center;"
 
         pokeCont.appendChild(name);
         pokeCont.appendChild(imgBox);
-
         pokeCont.appendChild(id);
+        pokeCont.appendChild(add);
         
         pokeLink.appendChild(pokeCont);
         pokeLink.href = "profile.html";
@@ -74,6 +84,9 @@ function getPokepokemon(pokemon) {
         mainCont.appendChild(colTwo);
         mainCont.appendChild(colThree);
 
+        add.addEventListener("click", () => {
+
+        })
 
         pokeLink.addEventListener("click", () => {
             console.log(pokeLink);
@@ -88,7 +101,7 @@ function addNewEvent(poke_name) {
     var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
     console.log(formatted);
     $.ajax({
-        url: "https://intense-woodland-48789.herokuapp.com/times/insert",
+        url: "https://pokedex-assignment3.herokuapp.com/times/insert",
         type: "put",
         data: {
             text: `${poke_name}`,
@@ -97,4 +110,8 @@ function addNewEvent(poke_name) {
         },
         success: (res)=>{console.log(res)}
     })
+}
+
+function addToCart(poke_id) {
+    fetch("")
 }
