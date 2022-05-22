@@ -100,10 +100,11 @@
                 flex-direction: column;
                 justify-content: center;
                 object-fit: scale-down;
-                outline: lightgray;
-                outline-style: double;
                 outline-width: 3px;
-                background-color: white;
+                border-radius: 15px;
+                background-color: rgba(229, 229, 224, 1);
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);
+                color: black;
             }
 
             .imgBox {
@@ -125,25 +126,51 @@
                 justify-content: center;
             }
 
+            .sbutton {
+                outline-width: 3px;
+                border-radius: 15px;
+                background-color: rgba(229, 229, 224, 1);
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);                
+                align-self: center;
+            }
+
             .sbutton a:link, a:visited {
-                background-color: black;
                 color: white;
                 padding: 20%;
                 text-align: center;
                 text-decoration: none;
                 display: inline-block;
+                outline-width: 3px;
+                border-radius: 15px;
+                background-color: rgba(229, 229, 224, 1);
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);
             }
 
             a.sbutton a:hover, a:active {
                 background-color: rgba(0, 0, 0, 0.354);
+                outline-width: 3px;
+                border-radius: 15px;
+                background-color: rgba(229, 229, 224, 1);
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
             }
 
             input {
+
                 width: 70%;
                 padding: 12px 20px;
                 margin: 5%;
                 box-sizing: border-box;
+                outline-width: 3px;
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);
             }
+
+            #logo {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
 
 
         </style>
@@ -152,21 +179,18 @@
 
     <body>
         <header>
-            <a href="index.html"><h1>PokeDex</h1></a>
+            <a href="index.html"><img src="/pokedexlogo.png" alt="logo" id="logo"></a>
             <hr>
         </header>
             <div id="form-container">
                 <div id="name-container">
-                    <label for="name">Pokemon Name</label>
                     <input type="text" id="name" name="name">
                 </div>
 
                 <div id="weight-container">
-                    <label for="weight">Pokemon Weight</label>
                     <input type="number" id="weight" name="weight">
                 </div>
                 <div id="height-container">
-                    <label for="height">Pokemon Height</label>
                     <input type="number" id="height" name="height">
                 </div>
             </div>

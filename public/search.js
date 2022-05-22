@@ -25,11 +25,10 @@ function SearchName() {
     x.style.cssText = "background-color: black;color: white;padding: 1%;text-align: center;text-decoration: none;display: inline-block;";
     x.addEventListener("click",function() {
         clearChildren();
-
         var temp = document.getElementById("name").value;
         console.log(temp);
         console.log(pokemonData);
-        for (var y = 1; y < 9; y++) {
+        for (var y = 1; y < 899; y++) {
             fetch(`https://pokeapi.co/api/v2/pokemon/${y}`)
 
             .then(response => response.json())
