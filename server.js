@@ -33,7 +33,8 @@ const TimesSchema = new mongoose.Schema({
 const UserSchema = new mongoose.Schema({
     email: String,
     password: String,
-    cartHistory: Array
+    cartHistory: Array,
+    currentCart: Array
 })
 
 const userModel = mongoose.model("users", UserSchema);

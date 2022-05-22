@@ -54,14 +54,14 @@ function getPokepokemon(pokemon) {
 
         let add = document.createElement("a");
         add.innerText = "Add to cart";
-        add.style.cssText ="outline-width: 3px;border-radius: 15px;background-color: rgba(229, 229, 224, 1);box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);align-self: center;"
+        add.style.cssText ="outline-width: 3px;border-radius: 7px;background-color: rgba(229, 229, 224, 1);box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);align-self: center;cursor: pointer;"
 
+
+        pokeLink.appendChild(imgBox);
         pokeCont.appendChild(name);
-        pokeCont.appendChild(imgBox);
+        pokeCont.appendChild(pokeLink);
         pokeCont.appendChild(id);
         pokeCont.appendChild(add);
-        
-        pokeLink.appendChild(pokeCont);
         pokeLink.href = "profile.html";
         let mainCont = document.getElementById("main-container");
         let colOne = document.getElementById("colOne");
@@ -69,13 +69,13 @@ function getPokepokemon(pokemon) {
         let colThree = document.getElementById("colThree");
 
         if(counter < 3) {
-            colOne.appendChild(pokeLink);
+            colOne.appendChild(pokeCont);
             counter++;
         } else if(counter < 6) {
-            colTwo.appendChild(pokeLink);
+            colTwo.appendChild(pokeCont);
             counter++;
         } else if(counter < 9){
-            colThree.appendChild(pokeLink);
+            colThree.appendChild(pokeCont);
             counter++;
         }
 
@@ -85,13 +85,13 @@ function getPokepokemon(pokemon) {
         mainCont.appendChild(colThree);
 
         add.addEventListener("click", () => {
-
+            console.log("x")
         })
 
         pokeLink.addEventListener("click", () => {
             console.log(pokeLink);
-            localStorage.setItem("pokemon", pokeLink.firstChild.firstChild.textContent);
-            addNewEvent(pokeLink.firstChild.firstChild.textContent);
+            localStorage.setItem("pokemon", pokemon.name);
+            addNewEvent(pokemon.name);
         })
 }
 
