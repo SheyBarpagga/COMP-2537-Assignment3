@@ -34,7 +34,6 @@ const UserSchema = new mongoose.Schema({
     email: String,
     password: String,
     cartHistory: Array,
-    currentCart: Array
 })
 
 const userModel = mongoose.model("users", UserSchema);
@@ -65,18 +64,6 @@ app.get("/user", function(req, res) {
 });
 })
 
-app.post('/user/register', function(req, res) {
-  userModel.create({
-    'email': req.body.email,
-    'password': req.body.password
-  }, function(err, data) {
-    if (err){
-      console.log("Error " + err);
-    } else {
-      console.log("Data "+ JSON.stringify(data) );
-    }
-    res.send(JSON.stringify(data))})
-})
 
 app.put('/times/insert', function(req, res) {
   timeLineModel.create({
@@ -102,15 +89,27 @@ app.get('https://pokedex-assignment3.herokuapp.com/', function(req, res) {
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/index.html', function(req, res) {
+  if (localStorage.getItem("loggedin")) {
     res.send('/public/index.html');
+  } else {
+    res.send('/public/login.html');
+  }
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/profile.html', function(req, res) {
-    res.send('/public/profile.html');
+    if (localStorage.getItem("loggedin")) {
+      res.send('/public/profile.html');
+    } else {
+      res.send('/public/login.html');
+    }
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/search.html', function(req, res) {
-    res.send('/public/search.html');
+    if (localStorage.getItem("loggedin")) {
+      res.send('/public/search.html');
+    } else {
+      res.send('/public/login.html');
+    }
 });
 
 app.use(express.static('./public'));

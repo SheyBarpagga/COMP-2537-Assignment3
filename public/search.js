@@ -4,11 +4,9 @@ var counter = 1;
 var boxCounter = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
-
     SearchName();
     SearchHeight();
     SearchWeight();
-
 })
 
 function clearChildren() {
@@ -43,7 +41,8 @@ function SearchName() {
     x.innerText = "Search Name"
     document.getElementById("name-container").appendChild(x);
     var temp = document.getElementById("name").value;
-    addNewEvent(`Searched for ${temp}`);
+    addNewEvent(`${temp}`);
+
 }
 
 function SearchWeight() {
@@ -69,7 +68,7 @@ function SearchWeight() {
     x.innerText = "Search Weight"
     document.getElementById("weight-container").appendChild(x);
     var temp = document.getElementById("weight").value;
-    addNewEvent(`Searched pokemon of ${temp} weight`);
+    addNewEvent(`${temp}`);
 }
 
 function SearchHeight() {
@@ -94,7 +93,7 @@ function SearchHeight() {
     x.innerText = "Search Height"
     document.getElementById("height-container").appendChild(x);
     var temp = document.getElementById("height").value;
-    addNewEvent(`Searched pokemon of ${temp} height`);
+    addNewEvent(`${temp}`);
 }
 
 function addItem(pokemon) {
@@ -166,7 +165,7 @@ function addNewEvent(poke_name) {
     var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
     console.log(formatted);
     $.ajax({
-        url: "https://intense-woodland-48789.herokuapp.com/times/insert",
+        url: "https://pokedex-assignment3.herokuapp.com/times/insert",
         type: "put",
         data: {
             text: `${poke_name}`,

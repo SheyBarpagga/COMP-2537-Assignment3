@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             data.forEach(element => {
                 if(((element.email).trim().localeCompare(email)) == 0 && ((element.password).trim().localeCompare(password)) == 0) {
                     localStorage.setItem("logged-in", true);
-                    localStorage.setItem("user", `${element.email}`);
+                    localStorage.setItem("user", `${element._id}`);
                     return window.location.href = "/";
                 }
             });
