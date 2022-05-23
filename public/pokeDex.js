@@ -88,7 +88,7 @@ function getPokepokemon(pokemon) {
         mainCont.appendChild(colThree);
 
         add.addEventListener("click", () => {
-            console.log("x")
+            addToCart(pokemon.id)
         })
 
         pokeLink.addEventListener("click", () => {
@@ -116,5 +116,22 @@ function addNewEvent(poke_name) {
 }
 
 function addToCart(poke_id) {
-    fetch("")
+    var cart = localStorage.getItem("cart");
+    cart = `${cart} ${poke_id}`
+    localStorage.setItem("cart", cart);
+
+    let pokemonIMG = document.createElement("img");
+    pokemonIMG.srcset = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${poke_id}.png`;
+    let imgBox = document.createElement("div");
+    pokemonIMG.classList.add("pokemon-image");
+    imgBox.appendChild(pokemonIMG);
+    imgBox.classList.add("imgBox");
+    let pokeCont = document.createElement("div");
+    pokeCont.classList.add("poke-container");
+    pokeCont.appendChild(imgBox);
+
+    pokeCont.appendChild(imgBox);
+    pokeCont.setAttribute("id", `${poke_id}`);
+    document.getElementById("cart").appendChild(pokeCont);
+
 }

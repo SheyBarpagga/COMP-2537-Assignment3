@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if(((element.email).trim().localeCompare(email)) == 0 && ((element.password).trim().localeCompare(password)) == 0) {
                     localStorage.setItem("logged-in", true);
                     localStorage.setItem("user", `${element._id}`);
+                    localStorage.setItem("cart", []);
                     return window.location.href = "/";
                 }
             });
