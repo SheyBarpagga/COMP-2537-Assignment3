@@ -109,7 +109,7 @@ app.put('/times/insert', function(req, res) {
 });
 })
 
-app.get('https://pokedex-assignment3.herokuapp.com/', function(req, res) {
+app.get('https://pokedex-assignment3.herokuapp.com', function(req, res) {
 
     res.send('/public/login.html');
     
@@ -122,19 +122,15 @@ app.get('https://pokedex-assignment3.herokuapp.com/index.html', function(req, re
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/profile.html', function(req, res) {
-    if (localStorage.getItem("loggedin")) {
+
       res.send('/public/profile.html');
-    } else {
-      res.send('/public/login.html');
-    }
+
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/search.html', function(req, res) {
-    if (localStorage.getItem("loggedin")) {
+
       res.send('/public/search.html');
-    } else {
-      res.send('/public/login.html');
-    }
+
 });
 
 app.use(express.static('./public'));
