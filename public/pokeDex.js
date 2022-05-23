@@ -2,6 +2,9 @@
 var counter = 0;
 document.addEventListener("DOMContentLoaded", () => {
     getPoke();
+    document.getElementById("logout").addEventListener("click", () => {
+        localStorage.setItem("logged-in", false);
+    })
 })
 
 
