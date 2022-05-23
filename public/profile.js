@@ -69,3 +69,4 @@ function getData(pokemon) {
     mainCont.appendChild(pokeCont);
 
 }
+

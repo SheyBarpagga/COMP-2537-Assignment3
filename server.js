@@ -83,6 +83,17 @@ app.put("/carts", function(req, res) {
   });
 })
 
+app.get("/carts/get", function(req, res) {
+  cartModel.find({}, function(err, data){
+      if (err){
+        console.log("Error " + err);
+      }else{
+        console.log("Data "+ JSON.stringify(data) );
+      }
+      res.send(JSON.stringify(data));
+  });
+})
+
 app.put('/times/insert', function(req, res) {
   timeLineModel.create({
     'text': req.body.text,
@@ -99,19 +110,15 @@ app.put('/times/insert', function(req, res) {
 })
 
 app.get('https://pokedex-assignment3.herokuapp.com/', function(req, res) {
-    if (localStorage.getItem("loggedin")) {
-      res.send('/public/index.html');
-    } else {
-      res.send('/public/login.html');
-    }
+
+    res.send('/public/login.html');
+    
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/index.html', function(req, res) {
-  if (localStorage.getItem("loggedin")) {
+
     res.send('/public/index.html');
-  } else {
-    res.send('/public/login.html');
-  }
+  
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/profile.html', function(req, res) {

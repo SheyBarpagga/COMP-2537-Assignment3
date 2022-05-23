@@ -80,7 +80,7 @@
 
             #cart {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: center;
                 object-fit: scale-down;
                 outline-width: 3px;
@@ -105,6 +105,7 @@
 
         <div id="main-container">
             <h1 id="total"></h1>
+            <a id="checkout" onclick="checkout()">Checkout</a>
             <div id="cart">
 
             </div>
@@ -118,4 +119,24 @@
         </footer>
     </body>
 
+    <script>
+        function checkout() {
+    var id = localStorage.getItem("id");
+    var now = new Date(Date.now());
+    var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    console.log(formatted);
+    $.ajax({
+        url: "https://pokedex-assignment3.herokuapp.com/carts",
+        type: "put",
+        data: {
+            text: cartItems,
+            id: `${id}`
+        },
+        success: (res)=>{console.log(res)}
+    })
+    localStorage.setItem("cart", "");
+    // return window.location.href = "/";
+}
+
+    </script>
 </html>

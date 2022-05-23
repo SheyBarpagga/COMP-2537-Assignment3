@@ -8,10 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return window.location.href = "/login.html";
     }
     getPoke();
+    // document.getElementById("checkout").addEventListener("click", checkout())
+
 })
 
 function getPoke() {
-    for(var x = 0; x < cartItems.length; x++) {
+    for(var x = 1; x < cartItems.length; x++) {
 
         fetch(`https://pokeapi.co/api/v2/pokemon/${cartItems[x]}`)
 
@@ -60,16 +62,12 @@ function getPokepokemon(pokemon) {
     id.innerText = "#" + pokemon.id;
     id.style.alignSelf = "center";
 
-    let add = document.createElement("a");
-    add.innerText = "Add to cart";
-    add.style.cssText ="outline-width: 3px;border-radius: 7px;background-color: rgba(229, 229, 224, 1);box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);align-self: center;cursor: pointer;"
-
 
     pokeLink.appendChild(imgBox);
     pokeCont.appendChild(name);
     pokeCont.appendChild(pokeLink);
     pokeCont.appendChild(id);
-    pokeCont.appendChild(add);
+
     pokeLink.href = "profile.html";
     let mainCont = document.getElementById("cart");
 
@@ -82,18 +80,5 @@ function getPokepokemon(pokemon) {
 }
 
 
-function checkout() {
-    var id = localStorage.getItem("id");
-    var now = new Date(Date.now());
-    var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-    console.log(formatted);
-    $.ajax({
-        url: "https://pokedex-assignment3.herokuapp.com/carts",
-        type: "put",
-        data: {
-            text: cartItems,
-            id: `${id}`
-        },
-        success: (res)=>{console.log(res)}
-    })
-}
+
+
