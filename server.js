@@ -109,11 +109,11 @@ app.put('/times/insert', function(req, res) {
 });
 })
 
-app.get('/', function(req, res) {res.send("/public/login.ejs")})
+app.get('/', function(req, res) {res.render("/public/login.ejs")})
 
 app.get('https://pokedex-assignment3.herokuapp.com', function(req, res) {
 
-    res.send('/public/login.html');
+    res.rende('/public/login.ejs');
     
 });
 
