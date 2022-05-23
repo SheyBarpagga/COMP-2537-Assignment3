@@ -113,7 +113,7 @@ app.get('/', function(req, res) {res.render("/public/login.ejs")})
 
 app.get('https://pokedex-assignment3.herokuapp.com', function(req, res) {
 
-    res.rende('/public/login.ejs');
+    res.render('/public/login.ejs');
     
 });
 
