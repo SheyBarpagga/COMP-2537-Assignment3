@@ -93,10 +93,12 @@ app.put('/times/insert', function(req, res) {
 });
 })
 
-
-
 app.get('https://pokedex-assignment3.herokuapp.com/', function(req, res) {
-    res.send('/public/index.html');
+    if (localStorage.getItem("loggedin")) {
+      res.send('/public/index.html');
+    } else {
+      res.send('/public/login.html');
+    }
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/index.html', function(req, res) {
