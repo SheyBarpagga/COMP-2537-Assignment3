@@ -107,6 +107,10 @@ app.put('/times/insert', function(req, res) {
 });
 })
 
+app.get('/', function(req, res) {
+  res.send('/public/login.html');
+})
+
 app.get('https://pokedex-assignment3.herokuapp.com', function(req, res) {
 
     res.send('/public/login.html');
