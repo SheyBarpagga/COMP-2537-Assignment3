@@ -1,4 +1,7 @@
-
+document.addEventListener("DOMContentLoaded", () => {
+    prevOrder()
+    tl()
+}) 
 
 function prevOrder() {
     fetch(`https://pokedex-assignment3.herokuapp.com/carts/get`)
