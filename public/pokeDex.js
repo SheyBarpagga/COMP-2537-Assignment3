@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("logout").addEventListener("click", () => {
         localStorage.setItem("logged-in", false);
     })
+    document.getElementById("checkout").addEventListener("click", () => {
+        return window.location.href = "/checkout.html";
+    })
 })
 
 

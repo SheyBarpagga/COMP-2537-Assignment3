@@ -35,10 +35,16 @@ const UserSchema = new mongoose.Schema({
     cartHistory: Array,
 })
 
+const CartSchema = new mongoose.Schema({
+    pokemon: Array,
+    id: String
+})
+
 const userModel = mongoose.model("users", UserSchema);
 
 const timeLineModel = mongoose.model("times", TimesSchema);
 
+const cartModel = mongoose.model("cart", CartSchema);
 
 app.get('/times/getAllEvents', function(req, res) {
 
@@ -63,6 +69,19 @@ app.get("/user", function(req, res) {
 });
 })
 
+app.put("/carts", function(req, res) {
+  cartModel.create({
+    'pokemon': req.body.pokemon,
+    'id': req.body.id
+  }, function(err, data) {
+    if (err){
+      console.log("Error " + err);
+    }else{
+      console.log("Data "+ JSON.stringify(data) );
+    }
+    res.send(JSON.stringify(data));
+  });
+})
 
 app.put('/times/insert', function(req, res) {
   timeLineModel.create({

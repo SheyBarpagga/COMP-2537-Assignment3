@@ -1,4 +1,6 @@
 let price = 0;
+const cart = localStorage.getItem("cart");
+const cartItems = cart.split(" ");
 
 document.addEventListener("DOMContentLoaded", () => {
     var l = localStorage.getItem("loggedin");
@@ -9,9 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function getPoke() {
-    var cart = localStorage.getItem("cart");
-    var cartItems = cart.split(" ");
-
     for(var x = 0; x < cartItems.length; x++) {
 
         fetch(`https://pokeapi.co/api/v2/pokemon/${cartItems[x]}`)
@@ -22,6 +21,7 @@ function getPoke() {
             getPokepokemon(pokepokemon);
         })
     }
+    document.getElementById("total").innerHTML = `${price}`
 }
 
 function getPokepokemon(pokemon) {
@@ -71,34 +71,29 @@ function getPokepokemon(pokemon) {
     pokeCont.appendChild(id);
     pokeCont.appendChild(add);
     pokeLink.href = "profile.html";
-    let mainCont = document.getElementById("main-container");
-    let colOne = document.getElementById("colOne");
-    let colTwo = document.getElementById("colTwo");
-    let colThree = document.getElementById("colThree");
+    let mainCont = document.getElementById("cart");
 
-    if(counter < 3) {
-        colOne.appendChild(pokeCont);
-        counter++;
-    } else if(counter < 6) {
-        colTwo.appendChild(pokeCont);
-        counter++;
-    } else if(counter < 9){
-        colThree.appendChild(pokeCont);
-        counter++;
-    }
-
-
-    mainCont.appendChild(colOne);
-    mainCont.appendChild(colTwo);
-    mainCont.appendChild(colThree);
-
-    add.addEventListener("click", () => {
-        addToCart(pokemon.id)
-    })
+    mainCont.appendChild(pokeCont);
 
     pokeLink.addEventListener("click", () => {
         console.log(pokeLink);
         localStorage.setItem("pokemon", pokemon.name);
-        addNewEvent(pokemon.name);
+    })
+}
+
+
+function checkout() {
+    var id = localStorage.getItem("id");
+    var now = new Date(Date.now());
+    var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+    console.log(formatted);
+    $.ajax({
+        url: "https://pokedex-assignment3.herokuapp.com/carts",
+        type: "put",
+        data: {
+            text: cartItems,
+            id: `${id}`
+        },
+        success: (res)=>{console.log(res)}
     })
 }
