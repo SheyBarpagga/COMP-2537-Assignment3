@@ -28,7 +28,9 @@ function tl() {
     .then(function(data) {
         var tl = document.getElementById("timeline");
         for(var x = 0; x < 2; x ++) {
-            tl.appendChild(data[x]);
+            var temp = document.createElement("p")
+            temp.innerHTML = `${data[x].time}`
+            tl.appendChild(temp);
         }
     })
 
