@@ -8,7 +8,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-        <script src="user.js"></script>
+        <script src="checkout.js"></script>
 
         <style>
             body {
@@ -62,6 +62,8 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
+                justify-self: center;
+                width: 70%;
             
             }
             
@@ -74,6 +76,17 @@
                 margin-left: auto;
                 margin-right: auto;
                 width: 30%;
+            }
+
+            #cart {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                object-fit: scale-down;
+                outline-width: 3px;
+                border-radius: 15px;
+                background-color: rgba(229, 229, 224, 1);
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);
             }
 
 
@@ -91,16 +104,10 @@
         </header>
 
         <div id="main-container">
-            <div id="current-cart">
-
+            <div id="cart">
+                
             </div>
 
-            <div id="timeline">
-
-            </div>
-            <div id="orders">
-
-            </div>
         </div>
 
         <hr>

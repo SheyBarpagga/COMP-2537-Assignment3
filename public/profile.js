@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    if (!localStorage.getItem("loggedin")) {
+        return window.location.href = "/login.html";
+    }
     getProfile();
 })
 

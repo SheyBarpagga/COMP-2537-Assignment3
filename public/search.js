@@ -4,6 +4,9 @@ var counter = 1;
 var boxCounter = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
+    if (!localStorage.getItem("loggedin")) {
+        return window.location.href = "/login.html";
+    }
     SearchName();
     SearchHeight();
     SearchWeight();

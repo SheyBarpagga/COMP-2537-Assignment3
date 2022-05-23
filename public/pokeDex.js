@@ -1,6 +1,10 @@
 
 var counter = 0;
 document.addEventListener("DOMContentLoaded", () => {
+    var l = localStorage.getItem("loggedin") 
+    if (l == "false") {
+        return window.location.href = "/login.html";
+    }
     getPoke();
     document.getElementById("logout").addEventListener("click", () => {
         localStorage.setItem("logged-in", false);
@@ -116,6 +120,7 @@ function addNewEvent(poke_name) {
 }
 
 function addToCart(poke_id) {
+
     var cart = localStorage.getItem("cart");
     cart = `${cart} ${poke_id}`
     localStorage.setItem("cart", cart);
