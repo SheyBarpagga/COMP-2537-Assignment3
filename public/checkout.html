@@ -121,7 +121,7 @@
 
     <script>
         function checkout() {
-    var id = localStorage.getItem("id");
+    var id = localStorage.getItem("user");
     var now = new Date(Date.now());
     var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
     console.log(formatted);
@@ -129,7 +129,7 @@
         url: "https://pokedex-assignment3.herokuapp.com/carts",
         type: "put",
         data: {
-            text: cartItems,
+            pokemon: cartItems,
             id: `${id}`
         },
         success: (res)=>{console.log(res)}
