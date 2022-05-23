@@ -7,15 +7,18 @@ function prevOrder() {
     fetch(`https://pokedex-assignment3.herokuapp.com/carts/get`)
     .then(response => response.json())
     .then(function(data) {
-        var id = localStorage.getItem("id");
+        var id = localStorage.getItem("user");
         var orders = document.getElementById("orders");
-        for (var x = 0; x < data.length; x++) {
-            if (data[x].id == id) {
-                var temp = data[x].pokemon;
-                for(var y = 0; y < temp.length; y++) {
+        for (const element of data) {
+            if (element.id == id) {
+                var box = document.createElement("div");
+                var temp = element.pokemon;
+                console.log(temp)
+                for(var y = 1; y < 5; y++) {
                     var v = document.createElement("p");
-                    v.innerHTML = `${temp[x]}`;
-                    orders.appendChild(v);
+                    v.innerHTML = `${temp}`;
+                    box.appendChild(v);
+                    orders.appendChild(box)
                 }
             }
         }
