@@ -10,8 +10,6 @@ const cors = require('cors');
 app.use(cors());
 
 
-app.set('view engine', 'ejs');
-
 app.listen(process.env.PORT || 5000, function (err) {
     if (err)
         console.log(err);
