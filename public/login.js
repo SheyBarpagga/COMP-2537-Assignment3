@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("logged-in", true);
                     localStorage.setItem("user", `${element._id}`);
                     localStorage.setItem("cart", []);
-                    return window.location.href = "/index.html";
+                    return window.location.href = "/user.html";
                 }
             });
         })
