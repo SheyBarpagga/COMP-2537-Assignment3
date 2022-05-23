@@ -109,22 +109,19 @@ app.put('/times/insert', function(req, res) {
 });
 })
 
-app.get('/', function(req, res) {res.render("/public/login.ejs")})
+app.get('https://pokedex-assignment3.herokuapp.com/', function(req, res) {
 
-app.get('https://pokedex-assignment3.herokuapp.com', function(req, res) {
-
-    res.render('/public/login.ejs');
+    res.send('/public/login.html');
     
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/index.html', function(req, res) {
 
     res.send('/public/index.html');
-  
+
 });
 
 app.get('https://pokedex-assignment3.herokuapp.com/profile.html', function(req, res) {
-
       res.send('/public/profile.html');
 
 });
